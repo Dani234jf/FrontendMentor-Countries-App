@@ -1,2 +1,12 @@
 @import "tailwindcss";
 @custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+    --color-primary: var(--color-white);
+    --color-secondary:  var(--color-gray-50);
+}
+
+.dark {
+    --color-primary: #2B3844;
+    --color-secondary:  #202C36;
+}

@@ -2,26 +2,26 @@
 
 import Countries from "@/components/countries";
 import DropDown from "@/components/dropdown";
-import MenuBar from "@/components/menu-bar";
 import SearchBar from "@/components/search-bar"
 import { useState } from "react";
 
 export enum Filters {
+  AllRegions = "All regions",
   Africa = "Africa",
   America = "Americas",
   Asia = "Asia",
   Europe = "Europe",
-  Oceana = "Oceania",
+  Oceana = "Oceania"
 }
 
 export default function Home() {
   
   const [search, setSearch] = useState("");
-  const [filter, setFilter] = useState<Filters>(Filters.Europe);
+  const [filter, setFilter] = useState<Filters | null>(null);
   
   return (
-      <>
-        <MenuBar></MenuBar>
+      <main>
+        <h1 className="sr-only">Countries of the world</h1>
         <section className="md:p-10 p-5">
           <div className="flex flex-col sm:flex-row align-middle gap-3 mb-12">
             <SearchBar search={search} setSearch={setSearch}></SearchBar>
@@ -29,6 +29,6 @@ export default function Home() {
           </div>
           <Countries search={search} filter={filter}></Countries>
         </section>
-      </>
+      </main>
   );
 }

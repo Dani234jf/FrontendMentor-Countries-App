@@ -14,9 +14,9 @@ export default function ThemeProvider({children} : {children: any}) {
 
     return (
         <ThemeContext.Provider value={{darkModeToggle, setDarkModeToggle}}>
-            <body className={`${darkModeToggle == true ? "dark" : ""} h-full`}>
+            <div className={`${darkModeToggle == true ? "dark" : ""} h-full flex flex-col`}>
                 {children}
-            </body>
+            </div>
         </ThemeContext.Provider>
     )
 }

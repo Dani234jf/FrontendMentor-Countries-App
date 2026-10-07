@@ -14,20 +14,20 @@ export interface Country {
     }
 }
 
-const filterCountries = (contries : Country[], filter : Filters, search : string) => {
-    let filteredCountries = contries.filter(c => filter == c.region)
+const filterCountries = (contries : Country[], filter : Filters | null, search : string) => {
+    let filteredCountries = contries.filter(c => !filter || filter == c.region)
     filteredCountries = filteredCountries.filter(c => c.name.toLowerCase().includes(search.trim().toLowerCase()));
 
     return filteredCountries;
 }
 
-export default function Countries({search, filter} : {search: string, filter: Filters}) {
+export default function Countries({search, filter} : {search: string, filter: Filters | null}) {
     
     const [contries, setContries] = useState<Country[]>(countries.map(c => ({
         name: c.name,
         population: c.population,
         region: c.region,
-        capital: c.capital ?? "N/A",
+        capital: c.capital ?? "-",
         flags: {
             png: c.flags.svg
         }

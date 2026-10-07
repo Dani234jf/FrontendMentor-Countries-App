@@ -32,7 +32,7 @@ This was my first project using React, Next.js and Tailwind CSS. I learned about
 
 ## Live Demo
 
-[View the live site](https://contries-7o5ol3oi3-dani234jfs-projects.vercel.app/)
+[View the live site](https://frontend-mentor-countries-app.vercel.app/)
 
 ## Author
 
